@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المهندسة الملكة ابتهال</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="custom-cursor"></div>
+    <div id="toast-message" class="toast"></div>
+    <div id="stars-container"></div>
+
+    <!-- ليلة خميسس قلببيي بدقاته اذا رحتي اسمعي -->
+    <audio id="bgMusic" loop>
+        <source src="bng/leilet_khamis.mp3" type="audio/mpeg">
+    </audio>
+    <button id="musicToggle" class="music-btn" title="تشغيل/إيقاف الموسيقى">♫</button>
+
+    <nav class="side-nav">
+        <ul>
+            <li data-target="announcement" class="active"></li>
+            <li data-target="invitation"></li>
+            <li data-target="memories"></li>
+            <li data-target="certificate"></li>
+            <li data-target="message"></li>
+            <li data-target="future"></li>
+        </ul>
+    </nav>
+
+    <!-- الشاشة الأولى - بوابة الحفل -->
+    <section id="gateway" class="gateway-screen">
+        <div class="stars-bg"></div>
+        <div class="gateway-content reveal-slow">
+            <p class="opening-quote">بعض الأيام لا تمرّ...<br>بل تُحفظ في الذاكرة.</p>
+            <h1 class="queen-title glow-text">المهندسة الملكة ابتهال</h1>
+            <p class="subtitle">احتفالًا بيومٍ طال انتظاره</p>
+            <button id="startPartyBtn" class="gold-btn">نبدا ربوعنا؟</button>
+        </div>
+    </section>
+
+    <main id="mainContent" class="hidden-content">
+        
+        <!-- إعلان التخرج -->
+        <section id="announcement" class="section-full">
+            <div class="content reveal">
+                <h2 class="title-serif gold-text">الاربعاء هالمرة... لك.</h2>
+                <p class="elegant-text mt-4">بعد أعوامٍ من السعي، والتعب، والمحاولات،<br>وصلت ملكتنا إلى اليوم الذي يستحق أن نحتفل به.</p>
+                <div class="grad-highlight reveal delay-1">
+                    <h3 class="grad-title glow-text">تخرّجت المهندسة ابتهال 🎓</h3>
+                    <p class="major">في تخصص علوم البيانات والذكاء الاصطناعي<br>من رحلة الجامعة</p>
+                </div>
+                <p class="elegant-text mt-4 reveal delay-2">وهذه الليلة...<br>ليست إلا بداية الرحلة.</p>
+            </div>
+        </section>
+
+        <!-- ليلة التخرج -->
+        <section id="invitation" class="section-card">
+            <div class="invitation-card reveal">
+                <div class="card-border">
+                    <h2 class="title-serif">ليلة خميس وتخرجك؟ تستحق الاحتفال!</h2>
+                    <p class="elegant-text">في مثل هذه الليالي،<br>لا نحتفل بشهادةٍ فحسب،<br>بل نحتفل بكل خطوة أوصلت إليها.</p>
+                    <div class="divider"></div>
+                    <p class="name-highlight glow-text">احتفالًا بالمهندسة</p>
+                    <p class="sub-major">أمينة قسم علوم البيانات والذكاء الاصطناعي<br>أمينتنا الامراطورة</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. قسم — الرحلة -->
+    <section id="journey" class="fullscreen-section dark-bg reveal">
+        <div class="content">
+            <h2 class="section-title gold-text">من البداية... إلى هذه اللحظة</h2>
+            <div class="timeline">
+                <div class="timeline-item" onclick="showToast('بداية الحلم...')">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><p>البداية</p></div>
+                </div>
+                <div class="timeline-item" onclick="showToast('خطوات واثقة')">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><p>خطوة وراء خطوة</p></div>
+                </div>
+                <div class="timeline-item" onclick="showToast('كنتِ قوية جداً')">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><p>أيام صعبة... لكنها مرّت</p></div>
+                </div>
+                <div class="timeline-item" onclick="showToast('وكبرت ابتهال')">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><p>أحلام كبرتِ معها</p></div>
+                </div>
+                <div class="timeline-item" onclick="showToast('وصلتِ يا ابتهال')">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><h3 class="gold-text">وأخيرًا... يوم التخرج</h3></div>
+                </div>
+            </div>
+            <p class="body-text mt-4">«كل إنجازٍ عظيم،<br>خلفها أيامٌ لم يرها أحد.»</p>
+            <p class="body-text">وأنتِ تعرفين جيدًا كم كان الطريق يستحق.</p>
+        </div>
+    </section>
+
+        <!-- الذكريات (بشكل الكود الأول المحسن) -->
+        <section id="memories" class="section-gallery">
+            <div class="content reveal">
+                <h2 class="title-serif gold-text">هنا تسكن الذكريات</h2>
+                <p class="elegant-text">لأن بعض اللحظات لا يكفي أن نتذكرها...<br>نحتاج أن نحتفظ بها.</p>
+                <div class="gallery mt-4">
+                    <div class="polaroid tilt-right reveal" onclick="openImageModal(this)">
+                        <div class="photo-placeholder">
+                            <img src="bng/photo1.jpg">
+                        </div>
+                        <p class="caption">ذكرى تستحق أن تبقى.</p>
+                    </div>
+                    <div class="polaroid tilt-left reveal delay-1" onclick="openImageModal(this)">
+                        <div class="photo-placeholder">
+                            <img src="bng/photo2.jpg">
+                        </div>
+                        <p class="caption">من البدايات التي أصبحت حكاية.</p>
+                    </div>
+                    <div class="polaroid tilt-right reveal delay-2" onclick="openImageModal(this)">
+                        <div class="photo-placeholder">
+                            <img src="bng/photo3.jpg">
+                        </div>
+                        <p class="caption">وهنا... كنا.</p>
+                    </div>
+                    <div class="polaroid tilt-left reveal delay-1" onclick="openImageModal(this)">
+                        <div class="photo-placeholder">
+                            <img src="bng/photo4.png">
+                        </div>
+                        <p class="caption">تفاصيل عظيمة تعني الكثير.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- مفاجأة صغيرة -->
+        <section id="surprise" class="section-center">
+            <div class="content reveal">
+                <h2 class="title-serif">هناك شيء آخر...</h2>
+                <p class="elegant-text mb-4">لأن ربوعي ما يكتمل بمفاجأة صغيرة.</p>
+                <button id="surpriseBtn" class="gold-btn outline">افتحي المفاجأة</button>
+                <div id="surpriseMessage" class="hidden-message">
+                    <p class="gold-text title-serif glow-text">مبررررروووووككككككككك يا أعظم من عرفت الجامعة.</p>
+                    <p class="elegant-text">وان شاء الله نشوفك من عالي لأعلى<br>هذه بداية أشياء أجمل تنتظرك.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- الشهادة -->
+        <section id="certificate" class="section-center">
+            <div class="content reveal">
+                <h2 class="title-serif gold-text">إلى المهندسة ابتهال</h2>
+                <p class="elegant-text mb-4">بكل فخر...<br>نحتفل اليوم بوصولك إلى واحدة من أجمل محطات رحلتك.</p>
+                <button id="certBtn" class="gold-btn">افتحي شهادتك</button>
+                <p class="elegant-text mt-4 cert-footer hidden-element" id="certFooter">تستحقين أن يُكتب اسمك في كل مكانٍ وصلتِ إليه.</p>
+            </div>
+        </section>
+
+        <!-- الإنجاز -->
+        <section id="achievement" class="section-center soft-bg">
+            <div class="content reveal">
+                <h2 class="title-serif">ولأنها ليست مجرد شهادة...</h2>
+                <p class="elegant-text mb-4">وراء هذا اليوم قصة ملكة اختارت أن تكمل الطريق،<br>حتى وصلت.</p>
+                <div class="achievement-card">
+                    <h3 class="name glow-text">م. ابتهال محمد</h3>
+                    <p class="major-title">علوم البيانات والذكاء الاصطناعي</p>
+                    <p class="uni">الجامعة الإسلامية بمينيسوتا</p>
+                </div>
+                <p class="elegant-text mt-4 gold-text">والأكيد لنا نصيب من رحلتك<br>فكان لك فيه فصلٌ جميل من الرحلة.</p>
+            </div>
+        </section>
+
+        <!-- رسالة منار -->
+        <section id="message" class="section-letter">
+            <div class="letter-paper reveal">
+                <h2 class="title-serif dark-text text-center">منّي إليكِ، يا ملكتي</h2>
+                <div class="letter-content mt-4">
+                    <p>ابتهال...</p>
+                    <p>ما أدري هل أقدر أختصر فرحتي فيكِ بكلمات، لكنّي أعرف أني اليوم سعيدة مو بس عشان اليوم ربوع لكن لأن أشوفك تشاركيني مناسبات الأربعاء السعيد بس هالمرة أنتِ وصلتِ إلى يومٍ كنتِ تستحقينه من زمان.</p>
+                    <p>أعرف أن وراء هذه اللحظة أيامًا كثيرة، تعبًا، ومحاولات، وأشياء ربما ما شافها أحد، لكن اليوم كل ذلك صار خلفكِ، وصارت أمامكِ صفحة جديدة تستحق كل هذا الفخر.</p>
+                    <p>مبرروووككك الف مرة ومرة لك يا ابتهال، مبروك للمهندسة، ومبروك لكل حلمٍ صغير كبر معكِ حتى أوصلكِ إلى هنا.</p>
+                    <p>أتمنى أن تكون هذه الشهادة مجرد بداية، وأن تكون الأيام القادمة أوسع من كل توقعاتك، وأجمل من كل ما تمنيتِ.</p>
+                    <p>وفخورة فيكِ جدًا.</p>
+                    <p class="signature mt-4">— المهندسة منار</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- الأمنيات والمستقبل -->
+        <section id="future" class="section-center">
+            <div class="content reveal">
+                <h2 class="title-serif gold-text">وما بعد التخرج؟</h2>
+                <p class="elegant-text mb-4">هذه ليست النهاية...<br>هذه أول صفحة فقط.</p>
+                
+                <div class="wishes-grid">
+                    <div class="wish-card reveal"><p>حلم جديد</p></div>
+                    <div class="wish-card reveal delay-1"><p>فرصة أجمل</p></div>
+                    <div class="wish-card reveal delay-2"><p>أيام أخف</p></div>
+                    <div class="wish-card reveal"><p>نجاحات أكبر</p></div>
+                    <div class="wish-card reveal delay-1"><p>أبواب لم تُفتح بعد</p></div>
+                </div>
+
+                <p class="elegant-text mt-4 reveal">أتمنى أن تأخذكِ الحياة إلى أماكن<br>تليق بكل ما بذلتِه للوصول إليها.</p>
+                
+                <div class="mt-8 reveal">
+                    <h2 class="title-serif">إلى ابتهال القادمة...</h2>
+                    <p class="elegant-text">أتمنى أن تلتفتِ يومًا إلى هذه اللحظة،<br>وتبتسمين لأنكِ ستكتشفين<br>أن هذا اليوم كان مجرد بداية.</p>
+                    <p class="gold-text mt-2">فليكن القادم أجمل.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- النهاية -->
+        <section id="finale" class="section-full finale-bg">
+            <div class="stars-bg"></div>
+            <div class="content finale-content">
+                <p class="reveal">انتهى الأربعاء بختام يمثلك...</p>
+                <p class="reveal delay-1 mt-2">لكن الحكاية بدأت الآن.</p>
+                <h2 class="title-serif gold-text mt-4 reveal delay-2 glow-text">مبروك يا المهندسة ياالملكة ياامراطورةابتهال.</h2>
+                <p class="elegant-text mt-4 reveal delay-3">عقبال كل حلمٍ قلتي يوم انه:<br>"بيصير"... وصار.</p>
+                
+                <div class="footer-sign reveal delay-4">
+                    <p>بكل الحب،<br>المهندسة منار</p>
+                    <p class="date">07 • 10 • 2026</p>
+                </div>
+                
+                <p class="english-touch reveal delay-5">To the next chapter.</p>
+                <span class="secret-star" onclick="showSecretMessage()">✦</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal الصور -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal('imageModal')">&times;</span>
+        <div class="modal-content">
+            <div id="modalImageContent" class="photo-placeholder large">الملكة ابتهال</div>
+            <p id="modalCaption" class="caption gold-text mt-2"></p>
+        </div>
+    </div>
+
+    <!-- Modal الشهادة -->
+    <div id="certModal" class="modal">
+        <span class="close" onclick="closeModal('certModal')">&times;</span>
+        <div class="modal-content cert-content">
+            <div class="cert-placeholder">
+    <img src="bng/photo5.png" alt="شهادة المهندسة ابتهال محمد" class="certificate-image">            </div>
+            <p class="caption mt-2 gold-text">شهادة المهندسة ابتهال محمد</p>
+        </div>
+    </div>
+
+    <!-- Secret Message Modal -->
+    <div id="secretModal" class="modal">
+        <span class="close" onclick="closeModal('secretModal')">&times;</span>
+        <div class="modal-content">
+            <p class="elegant-text">إذا وصلتي إلى هنا...<br>فهذا يعني أن الحفل انتهى،<br>لكن عندي كلام كثير لكِ ما خلص.</p>
+            <button class="gold-btn outline mt-4" onclick="document.getElementById('message').scrollIntoView({behavior: 'smooth'}); closeModal('secretModal');">ارجعي للرسالة 💌</button>
+        </div>
+    </div>
+
+    <div id="confettiContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
